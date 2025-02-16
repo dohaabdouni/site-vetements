@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made by Doha Abdouni </title>
+    <!--logo panier -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+<style>
+.image-row img {
+    max-width: 100%;
+    height: 215px;
+    display: block;
+    border: none; 
+}
+/*ecriture for title in center fixe*/
+.title {
+    position: absolute;
+    top: 20%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: rgb(81, 109, 79); 
+    font-size: 3em; 
+    text-shadow: 2px 2px 4px rgba(244, 250, 197, 0.7); 
+    margin: 0;
+}
+/*for animation the title*/
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid rgb(199, 207, 157);
+    white-space: nowrap;/* titre meme ligne*/
+    margin: 0 auto;
+    letter-spacing: .20em;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 50% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color:rgb(199, 207, 157); }
+}
+/*backround */
+header {
+  background-color:  rgb(108, 146, 105);
+  padding: 20px;
+  text-align: center;
+}
+header h1,h12 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: beige;
+}
+nav ul {
+  list-style: none;/*cercle*/
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: beige;
+  font-weight: bold;
+}
+/* boutton des liens*/
+.btn {
+    transition: all 0.5s ease;
+}
+.btn:active {
+    background-color: rgb(103, 96, 101);
+    color: white;
+    transform: scale(0.95);
+}
+/*logo*/
+.photo {
+    position: absolute;
+    top: 65%;  
+    right: 90%; 
+    transform: translate(-50%, -50%);
+}/*animation for solde out*/
+@keyframes colorChange {
+    0% { color: red; }
+    25% { color: beige; }
+    50% { color: brown; }
+    75% { color: rgb(103, 96, 101);}
+    100% { color: orange; }
+}
+@keyframes moveText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); }
+}
+.moving-text {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: colorChange 5s infinite, moveText 8s linear infinite;/*linear meme vitesse*/
+}
+.product {
+  background-color: beige;
+  border: 1px solid rgb(96, 132, 93);
+  border-radius: 50px;
+  text-align: center;
+  padding: 10px;
+  width: 400px;
+}
+.product img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.product img:hover{
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  0%, 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-7px);
+  }
+}
+.product h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+.product p {
+  font-size: 1rem;
+  color: #ff6666;
+}
+/* 3 photo in line 3 photo in line*/
+.products {
+  display: flex;
+  justify-content: space-between;
+}
+.products image {
+  margin-right: 10px;
+}
+.product {
+    text-align: center; 
+    transition: all 0.3s ease; /* une fois cursor sur image fait un transition*/
+}
+.product:hover {
+    background-color:rgb(96, 132, 93) ; 
+    color: blanchedalmond; 
+    transform: scale(1.1); 
+}
+.products {
+            font-size: 20px;
+        }/*premier prix*/
+        .old-price {
+            text-decoration: line-through;
+            color: red;
+            margin-right: 10px;
+        }/*deuxieme prix*/
+        .new-price {
+            color: green;
+            font-weight: bold;
+        }/* pied de la page*/
+        footer {
+  background-color:rgb(96, 132, 93);
+  color: blanchedalmond;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}/* border de la page*/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 5px solid rgb(96, 132, 93);
+  animation: borderMove 5s linear infinite;
+}
+.shop-now-btn {
+    background-color: rgb(96, 132, 93); 
+    color: beige; 
+    line-height: 50px;
+    text-align: center; 
+    margin: 10px auto; 
+    border-radius: 10px; 
+    transition: all 0.3s ease; 
+}
+.shop-now-btn:hover {
+    background-color: beige; 
+    color:rgb(96, 132, 93) ; 
+    transform: scale(1.1); 
+}/*formulaire shop now*/
+.content {
+            padding: 0px;
+        }
+        .hidden {
+            display: none;
+        }
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(154, 152, 111, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup.active {
+            display: flex;
+        }
+        .popup .popup-content {
+            background: rgb(102, 131, 83);
+            padding: 50px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: left;
+        }
+        .popup .popup-content h3 {
+            margin-top: 0;
+        }
+        .popup .popup-content input,
+        .popup .popup-content button {
+            width: 100%;
+            margin: 3px 0;
+            padding: 10px;
+            border: 5px solid beige;
+            border-radius: 5px;
+        }
+        .popup .popup-content button {
+            background-color: beige;
+            color: burlywood;
+            border: none;
+            cursor: pointer;
+        }
+        .popup .popup-content button:hover {
+            background-color: beige;
+        }/*panier */
+.cart-icon {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: beige;
+                padding: 10px;
+                border-radius: 50% ;
+                border: 2px solid rgb(28, 59, 6);
+                font-size: 20px;
+              }
+              .modal {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 300px;
+                background: beige;
+                border: 2px solid rgb(28, 59, 6);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+                text-align: center;
+                padding: 20px;
+              }
+              .modal.open {
+                display: block;
+              }
+              .modal-header {
+                font-weight: bold;
+                margin-bottom: 15px;
+              }
+              .close-btn {
+                background: rgb(28, 59, 6);
+                color: beige;
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 20px;
+              }
+              .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+              }
+              .overlay.open {
+                display: block;
+              }
+/* element home class active*/
+ul li a#active{
+        color: rgb(31, 79, 29);
+        background-color: beige;
+    }
+</style>
+<body>
+    <div class="image-row">
+        <img src="outfit.jpeg" alt="Image">
+        <div class="title"><h4 class="typewriter" >we are here for you</h4></div>
+    </div>
+   <header>
+    <div><h12>"Your beauty and appearance is our priority, here's all about women."</h12></div>
+        <h1>--Elegant Girls--</h1>
+        <nav><li>
+          <ul>
+            <!--beaucoup de class et div -->
+            <li><a href="index2.html"  target="_blank" class="btn" onclick="showPage('sign in')">sign in </a></li>
+            <li><a href="#" class="btn" id="active" onclick="showPage('home')" >Home</a></li>
+            <li><a href="#" class="btn" onclick="showPage('clothes')">clothes</a></li>
+            <li><a href="#" class="btn" onclick="showPage('accessories')">Accessories</a></li>
+            <li><a href="#" class="btn" onclick="showPage('handbags')">handbags</a></li>
+            <li><a href="#" class="btn" onclick="showPage('hijabs')">hijabs</a></li>
+            <li><a href="#" class="btn" onclick="showPage('Shoes')">Shoes</a></li>
+            <li><a href="#" class="btn" onclick="showPage('Makeup')">Makeup's</a></li>
+            <li><a href="#" class="btn" onclick="showPage('parfum')">parfum</a></li>
+<div class="cart-icon" id="cartIcon" >🛒</div>
+            <div class="overlay" id="overlay"></div>
+            <div class="modal" id="cartModal">
+              <div class="modal-header">Your Cart</div>
+              <p>Your cart is empty.</p>
+              <div class="foot">
+                <h4>Total</h4>
+                <h5 id="total">$ 0.00</h5>
+              </div>
+              <button class="close-btn" id="closeBtn">Close</button>
+            </div>
+            <script>
+              // Open modal
+              cartIcon.addEventListener("click", () => {
+                cartModal.classList.add("open");
+                overlay.classList.add("open");
+              });
+              // Close modal
+              closeBtn.addEventListener("click", () => {
+                cartModal.classList.remove("open");
+                overlay.classList.remove("open");
+              });
+              overlay.addEventListener("click", () => {
+                cartModal.classList.remove("open");
+                overlay.classList.remove("open");
+              });
+            </script>
+          </ul>
+        </nav>
+      </header>
+    </div>
+      <div class="container">
+        <div class="photo">
+        <img  src="logo.jpeg" alt="logo" width="60px" height="60px">
+        </div>
+        <h1 class="moving-text">Today's solde</h1>
+<main>
+<br>
+<div class="content" id="home">
+          <section class="products" >
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\2.jpeg"  alt="image">
+              <h3>Elegant ensemble</h3>
+              <h6>Un ensemble chic et élégant composé de deux pièces, comprenant un haut et un pantalon. Les articles sont de bonne qualité, adaptés pour un style simple et sophistiqué.</h6>
+              <span class="old-price">450 درهم</span><br>
+              <span class="new-price">350 درهم</span><br>
+                    <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn" >Shop Now</a> 
+            </div>
+            <div class="popup" id="popup">
+              <div class="popup-content">
+                  <h3 style="color: white;">Fill Your Information</h3>
+                  <label for="name"> Name:</label>
+                  <input type="text" id="name" placeholder="Enter your  name" required>
+                  <label for="text">Address,city:</label>
+                  <input type="text" id="text" placeholder="Enter your address" required>
+                  <label for="number">Phone Number:</label>
+                  <input type="number"  placeholder="Entrer a 9-digit number" required>
+                  <label for="number">Card number:</label>
+                  <input type="number"  placeholder="Card number" required>
+                  <label for="number">Expiration date:</label>
+                  <input type="number"  placeholder="MM/YY" required>
+                  <label for="CVV"> CVV:</label>
+                  <input type="number"  placeholder="3-4 digits" required>
+                  <button id="submitBtn">Save and Use</button>
+                  <button id="closeBtn">Close</button>
+              </div>
+          </div>
+          <script>
+              const shopNowButtons = document.querySelectorAll('.shop-now-btn');
+              const popup = document.getElementById('popup');
+              const closeBtn = document.getElementById('closeBtn');
+              // Show popup when clicking "Shop Now"
+              shopNowButtons.forEach(button => {
+                  button.addEventListener('click', () => {
+                      popup.classList.add('active');
+                  });
+              });
+              // Close popup
+              closeBtn.addEventListener('click', () => {
+                  popup.classList.remove('active');
+              });
+              // Close popup when clicking outside the content
+              popup.addEventListener('click', (e) => {
+                  if (e.target === popup) {
+                      popup.classList.remove('active');
+                  }
+              });
+          </script>
+            <div class="product">
+              <img src=" c:\Users\hp\Downloads\Eco Leather Utilitarian Trench Coat.jpeg     " alt="image"  height="300px">
+              <h3> black trench</h3>
+              <h6>Un trench noir en cuir d'apparence luxueuse, parfait pour les saisons fraîches.</h6>
+              <span class="old-price">600 درهم</span><br>
+              <span class="new-price">450 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop now</a>  
+            </div>
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\4.jpeg" alt="image">
+              <h3>Comfortable ensemble</h3>
+              <h6>Un ensemble confortable et décontracté, composé d'un haut et d'une jupe longue. Fabriqué pour offrir confort et style.</h6>
+              <span class="old-price">400 درهم</span><br>
+              <span class="new-price">350 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+          </section>
+            <br>
+            <section class="products">
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\5.jpeg" alt="image">
+              <h3>Beige trico </h3>
+              <h6>Un cardigan en maille beige avec des manches larges,  pour un look élégant et confortable.</h6>
+              <span class="old-price">400 درهم</span><br>
+              <span class="new-price">350 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\6.jpeg" alt="image">
+              <h3>white Comfortable ensemble</h3>
+              <h6>Une tenue hivernale  pour un style minimaliste.</h6>
+              <span class="old-price">500 درهم</span><br>
+              <span class="new-price">450 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\7.jpeg" alt="image">
+              <h3>Great dress</h3>
+              <h6>Une robe de soirée en satin vert olive, élégante et drapée. Le design structuré et fluide la rend parfaite pour des occasions formelles.</h6>
+              <span class="old-price">1000 درهم</span><br>
+              <span class="new-price">850 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+          </section>
+            <br>
+          <section class="products">
+            <div class="product">
+              <img src=" c:\Users\hp\Downloads\42dc1f96-1403-4eca-a038-a814aa7739d3.jpeg  " alt="image">
+              <h3>perfect skirt</h3>
+              <h6>Une jupe en tissu fluide marron foncé, idéale pour une tenue simple et élégante.</h6>
+              <span class="old-price">200 درهم</span><br>
+              <span class="new-price">150 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\3.jpeg" alt="image">
+              <h3>Great Dress</h3>
+              <h6>Une longue ensemble la jupe et le haut verte avec des manches larges, associée à un hijab gris clair. Parfaite pour un style sophistiqué et modeste.</h6>
+              <span class="old-price">200 درهم</span><br>
+              <span class="new-price">150 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\10.jpeg" alt="image">
+              <h3>Shearling Sheepskin Leather Jackets Outwear</h3>
+              <h6>Une veste en cuir noir avec un col et des poignets en peau lainée blanche. Un choix chic et confortable pour l'hiver.</h6>
+              <span class="old-price">600 درهم</span><br>
+              <span class="new-price">500 درهم</span><br>
+              <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>  
+            </div>
+          </section>
+ </main>
+ <section class="products">
+ <div class="content hidden" id="clothes">
+  <div class="product">
+    <img src="c:\Users\hp\Downloads\Vibrant Color Blouse - XS _ Light Green.jpeg" alt="image" height="450px">
+    <h3>simple Chemise</h3>
+    <span class="old-price">200 درهم</span><br>
+    <span class="new-price">150 درهم</span><br>
+    <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+    <a href="#" class="shop-now-btn">Shop Now</a>
+    <i class="fa-solid fa-basket-shopping"></i>
+  </div>  
+ </div>   
+ <div class="content hidden" id="clothes">
+  <div class="product">
+    <img src="c:\Users\hp\Downloads\Shearling Sheepskin Leather Jackets Outwear from KoKo Fashion.jpeg" alt="image">
+    <h3>Jackets</h3>
+    <span class="old-price">450 درهم</span><br>
+    <span class="new-price">350 درهم</span><br>
+    <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+    <a href="#" class="shop-now-btn">Shop Now</a>
+    <i class="fa-solid fa-basket-shopping"></i>
+  </div>     
+ </div> 
+ <div class="content hidden" id="clothes">
+  <div class="product">
+    <img src="  c:\Users\hp\Downloads\🖤.jpeg " alt="image" height="450px"  width="40px">
+    <h3>white dress comfortable </h3>
+    <span class="old-price">400 درهم</span><br>
+    <span class="new-price">300 درهم</span><br>
+    <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+    <a href="#" class="shop-now-btn">Shop Now</a>
+    <i class="fa-solid fa-basket-shopping"></i>
+  </div>     
+ </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="clothes">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\Pastsstore how to style cargo pants women Women Grey Cargo Jeans Harajuku 90s Vintage Y2k Baggy Denim Trouser Oversize Japanese 2000s Style Jean Pants Trashy Clothes 2024 Blue-S.jpeg"  alt="image">
+     <h3>cargo pants </h3>
+     <span class="old-price">250 درهم</span><br>
+     <span class="new-price">200 درهم</span><br>
+     <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+     <i class="fa-solid fa-basket-shopping"></i>
+   </div>  
+  </div> 
+  <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (9).jpeg " width="450px" alt="image">
+      <h3>white dress</h3>
+      <span class="old-price">650 درهم</span><br>
+      <span class="new-price">500 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div> 
+   <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="  c:\Users\hp\Downloads\fa67d14c-d986-4895-b42e-8e0fbacbe72b.jpeg" alt="image">
+      <h3>dress in another version</h3>
+      <span class="old-price">450 درهم</span><br>
+      <span class="new-price">350 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">Xl</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="clothes">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\81c005fd-aca8-4b14-9484-e3096cd49ff8.jpeg"  alt="image">
+     <h3>beige pants </h3>
+     <span class="old-price">350 درهم</span><br>
+     <span class="new-price">299 درهم</span><br>
+     <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+     <i class="fa-solid fa-basket-shopping"></i>
+   </div>  
+  </div> 
+  <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (6).jpeg" alt="image">
+      <h3>Elegant dress</h3>
+      <span class="old-price">450 درهم</span><br>
+      <span class="new-price">350 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div> 
+   <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (5).jpeg" alt="image">
+      <h3>black jacket</h3>
+      <span class="old-price">599 درهم</span><br>
+      <span class="new-price">500 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="clothes">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (4).jpeg" width="400px" alt="image">
+     <h3>great coat</h3>
+     <span class="old-price">799 درهم</span><br>
+     <span class="new-price">699 درهم</span><br>
+     <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+     <i class="fa-solid fa-basket-shopping"></i>
+   </div>  
+  </div> 
+  <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (3).jpeg" alt="image">
+      <h3>black veste</h3>
+      <span class="old-price">350 درهم</span><br>
+      <span class="new-price">200 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div> 
+   <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (2).jpeg" alt="image">
+      <h3>Elegant dress</h3>
+      <span class="old-price">650 درهم</span><br>
+      <span class="new-price">500 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="clothes">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\c90adcd8-ffed-46a3-bc67-5c975cf79b76.jpeg" width="400px" alt="image">
+     <h3>over pants</h3>
+     <span class="old-price">450 درهم</span><br>
+     <span class="new-price">300 درهم</span><br>
+     <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+     <i class="fa-solid fa-basket-shopping"></i>
+   </div>  
+  </div> 
+  <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\Chemise beige à fines rayures et manchettes _ Tops.jpeg" alt="image">
+      <h3>chemise</h3>
+      <span class="old-price">300 درهم</span><br>
+      <span class="new-price">200 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div> 
+   <div class="content hidden" id="clothes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (1).jpeg" alt="image">
+      <h3>pants </h3>
+      <span class="old-price">450 درهم</span><br>
+      <span class="new-price">350 درهم</span><br>
+      <h4><label for="sizes">Select Size:</label></h4>
+                    <select id="sizes" name="sizes">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select><br><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+      <i class="fa-solid fa-basket-shopping"></i>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="accessories">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\1 Pièce Monture De Lunettes Noires Large Européenne Et Américaine De Tendance Y2k À Lentilles Plates Décorées Carrées _ Mode en ligne.jpeg" width="400px" alt="image">
+     <h3>lunettes</h3>
+     <span class="old-price">250 درهم</span><br>
+     <span class="new-price">150 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\2組 トータスシェル オーバル フレーム サングラス ブラック シェード _ SHEIN JAPAN.jpeg" alt="image">
+      <h3>Elegant lunettes</h3>
+      <span class="old-price">150 درهم</span><br>
+      <span class="new-price">100 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+   <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\3 paires de lunettes de soleil pour femmes à monture carrée, accessoires de voyage, lunettes de soleil décontractées pour la plage.jpeg" alt="image">
+      <h3>Lunettes</h3>
+      <span class="old-price">150 درهم</span><br>
+      <span class="new-price">100 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="accessories">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (7).jpeg" width="400px" alt="image">
+     <h3>Echarpe</h3>
+     <span class="old-price">250 درهم</span><br>
+     <span class="new-price">150 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src=" c:\Users\hp\Downloads\download (10).jpeg" alt="image">
+      <h3>beige echarpe </h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">150 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+   <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (11).jpeg" alt="image">
+      <h3>pink echarpe</h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">150 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="accessories">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (12).jpeg" width="400px" alt="image">
+     <h3>bracelets</h3>
+     <span class="old-price">150 درهم</span><br>
+     <span class="new-price">125 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (13).jpeg" alt="image">
+      <h3>white Echarpe</h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">150 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+   <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\Ensemble de bagues minimalistes - Doré.jpeg"  alt="image">
+      <h3>Ring</h3>
+      <span class="old-price">100 درهم</span><br>
+      <span class="new-price">80 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div>  
+ </section>
+ <section class="products">
+  <div class="content hidden" id="accessories">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\Grosse bague en or, bague dôme épaisse, bague en or de l'Italie, grande bague large, tailles de 5 US à 10 US, acier inoxydable plaqué or 18 carats.jpeg" width="400px" alt="image">
+     <h3>Ring</h3>
+     <span class="old-price">150 درهم</span><br>
+     <span class="new-price">99 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="accessories">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\Ensemble de bagues rondes en moissanite 14 carats Ensemble de bagues de fiançailles en or massif Ensemble de bagues de mariage de haute qualité Ensemble de bagues empilables Ensemble de bagues de mariée Promesse - Et.jpeg" alt="image">
+      <h3>Ring</h3>
+      <span class="old-price">450 درهم</span><br>
+      <span class="new-price">350 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="accessories">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (14).jpeg" width="400px" alt="image">
+     <h3>Clock</h3>
+     <span class="old-price">300 درهم</span><br>
+     <span class="new-price">200 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\@jessixje Polène Handbag brown Numéro Dix EDITION CAMEL 🫶🏼🧸👜.jpeg" width="400px" alt="image">
+     <h3>Great bag</h3>
+     <span class="old-price">450 درهم</span><br>
+     <span class="new-price">350 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="handbags">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\Carrie Bradshaw's Beloved Dior Saddle & 23 More Designer Bags Dominating 2023.jpeg" alt="image">
+      <h3>dior bag</h3>
+      <span class="old-price">650 درهم</span><br>
+      <span class="new-price">550 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\Chanel_ 10 on-trend bags spotted at the Fall_Winter 2020-2021 show.jpeg" width="400px" alt="image">
+     <h3>bag channel</h3>
+     <span class="old-price">850 درهم</span><br>
+     <span class="new-price">750 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (15).jpeg" width="400px" alt="image">
+     <h3>Elegant bag</h3>
+     <span class="old-price">400 درهم</span><br>
+     <span class="new-price">300 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="handbags">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (16).jpeg" alt="image">
+      <h3>bag brada</h3>
+      <span class="old-price">850 درهم</span><br>
+      <span class="new-price">799 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\The Black Friday handbag deals you should know about - think shoulder bags, clutches and totes.jpeg" width="400px" alt="image">
+     <h3>black bag</h3>
+     <span class="old-price">650 درهم</span><br>
+     <span class="new-price">550 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\Fashion Felt Cloth Pattern Shoulder Bags For Women Small Handle Underarm Bag Clutch Luxury Solid Color Female Handbag With Purse, D.jpeg" width="400px" alt="image">
+     <h3>bink bag</h3>
+     <span class="old-price">450 درهم</span><br>
+     <span class="new-price">350 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="handbags">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\Put Away The Mini Bag, It's Time For Big Roomy Totes To Shine (1).jpeg" alt="image">
+      <h3>bag</h3>
+      <span class="old-price">450 درهم</span><br>
+      <span class="new-price">350 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\Remember _What's in My Bag_ Videos_ Here's What Fashion Editors Keep in Theirs.jpeg" width="400px" alt="image">
+     <h3>black bbag brada</h3>
+     <span class="old-price">550 درهم</span><br>
+     <span class="new-price">450 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\The Hot List_ 10 Popular Bags That Will Define Fall 2022.jpeg" width="400px" alt="image">
+     <h3>bag dior </h3>
+     <span class="old-price">650 درهم</span><br>
+     <span class="new-price">600 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="handbags">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\0e14c99d-111b-4917-ad76-ea0b38acf222.jpeg" alt="image">
+      <h3>long champ</h3>
+      <span class="old-price">450 درهم</span><br>
+      <span class="new-price">350 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="handbags">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\WMFASBAG Women Patent Leather Tote Bag Versatile Fashion Shoulder Bag Casual Satchel Hobo Bag Zipper.jpeg" width="400px" alt="image">
+     <h3>bag </h3>
+     <span class="old-price">499 درهم</span><br>
+     <span class="new-price">450 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="hijabs">
+    <h1 style="color: rgb(102, 8, 8);margin-top: 20px;">I'm proud of you for reaching this stage</h1><br>
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\ab0fb090-ecf1-43ba-a440-8a06c8cab6d5.jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="hijabs">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\efd069be-6075-47a3-9555-622b44ee2db9.jpeg"  alt="image">
+      <h3>hijab</h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">100 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\4baf3d9a-cd74-42ee-b3ae-a95b70048a2f.jpeg" width="400px" alt="image">
+     <h3>hija</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\230b9081-61fd-4256-82ab-4f0d9bed2a77.jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="hijabs">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\cb5f5778-c996-48af-9212-0708783bb473.jpeg" alt="image">
+      <h3>hijab</h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">100 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (18).jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\Pashmina hijab style 🪷.jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="hijabs">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\Écharpe cachemire pashmina rose poudré, châle bohème rose poudré, emballage de mariage festival, cadeau de fête des mères, écharpe hippie végétalienne, collection Ahu Istanbul.jpeg" alt="image">
+      <h3>hijab</h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">100 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\fall colours unlocked🔓.jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+ <section class="products">
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\🌌.jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="hijabs">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\16674923-a61d-406a-804a-cce4ec2aa13b.jpeg" alt="image">
+      <h3>hijab</h3>
+      <span class="old-price">200 درهم</span><br>
+      <span class="new-price">100 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="hijabs">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\7b3164af-8a22-4a36-b341-d35602649015.jpeg" width="400px" alt="image">
+     <h3>hijab</h3>
+     <span class="old-price">200 درهم</span><br>
+     <span class="new-price">100 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+ </section>
+<section class="products">
+<div class="content hidden" id="Shoes">
+ <div class="product">
+   <img src="c:\Users\hp\Downloads\New balance 530.jpeg" width="400px" alt="image">
+   <h3>New balance</h3>
+   <span class="old-price">450 درهم</span><br>
+   <span class="new-price">350 درهم</span><br>
+   <a href="#" class="shop-now-btn">Shop Now</a>
+ </div>  
+</div> 
+<div class="content hidden" id="Shoes">
+  <div class="product">
+    <img src="c:\Users\hp\Downloads\download (19).jpeg" alt="image">
+    <h3>sandals</h3>
+    <span class="old-price">350 درهم</span><br>
+    <span class="new-price">200 درهم</span><br>
+    <a href="#" class="shop-now-btn">Shop Now</a>
+  </div>  
+ </div> 
+<div class="content hidden" id="Shoes">
+ <div class="product">
+   <img src="c:\Users\hp\Downloads\download (20).jpeg" width="400px" alt="image">
+   <h3> heel shoes</h3>
+   <span class="old-price">650 درهم</span><br>
+   <span class="new-price">550 درهم</span><br>
+   <a href="#" class="shop-now-btn">Shop Now</a>
+ </div>  
+</div> 
+</section>
+<section class="products">
+  <div class="content hidden" id="Shoes">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (21).jpeg" width="400px" alt="image">
+     <h3>New balance</h3>
+     <span class="old-price">450 درهم</span><br>
+     <span class="new-price">350 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  <div class="content hidden" id="Shoes">
+    <div class="product">
+      <img src="c:\Users\hp\Downloads\download (22).jpeg" alt="image">
+      <h3>heel shoes</h3>
+      <span class="old-price">550 درهم</span><br>
+      <span class="new-price">450 درهم</span><br>
+      <a href="#" class="shop-now-btn">Shop Now</a>
+    </div>  
+   </div> 
+  <div class="content hidden" id="Shoes">
+   <div class="product">
+     <img src="c:\Users\hp\Downloads\download (23).jpeg" width="400px" alt="image">
+     <h3>heel shoes</h3>
+     <span class="old-price">600 درهم</span><br>
+     <span class="new-price">550 درهم</span><br>
+     <a href="#" class="shop-now-btn">Shop Now</a>
+   </div>  
+  </div> 
+  </section>
+  <section class="products">
+    <div class="content hidden" id="Shoes">
+     <div class="product">
+       <img src="c:\Users\hp\Downloads\UGG fashion woman.jpeg" width="400px" alt="image">
+       <h3>UGG fashion woman</h3>
+       <span class="old-price">550 درهم</span><br>
+       <span class="new-price">450 درهم</span><br>
+       <a href="#" class="shop-now-btn">Shop Now</a>
+     </div>  
+    </div> 
+    <div class="content hidden" id="Shoes">
+      <div class="product">
+        <img src="c:\Users\hp\Downloads\Ugg Tasman.jpeg" alt="image">
+        <h3>ugg</h3>
+        <span class="old-price">450 درهم</span><br>
+        <span class="new-price">350 درهم</span><br>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>  
+     </div> 
+    <div class="content hidden" id="Shoes">
+     <div class="product">
+       <img src="c:\Users\hp\Downloads\download (24).jpeg" width="400px" alt="image">
+       <h3>UGG</h3>
+       <span class="old-price">450 درهم</span><br>
+       <span class="new-price">350 درهم</span><br>
+       <a href="#" class="shop-now-btn">Shop Now</a>
+     </div>  
+    </div> 
+    </section>
+    <section class="products">
+      <div class="content hidden" id="Makeup">
+       <div class="product">
+         <img src="c:\Users\hp\Downloads\274a6a96-5527-4e0f-8d03-78b2cd8e086a.jpeg" width="400px" alt="image">
+         <h3>lip tint (rhode) </h3>
+         <span class="new-price">200 درهم</span><br>
+         <a href="#" class="shop-now-btn">Shop Now</a>
+       </div>  
+      </div> 
+      <div class="content hidden" id="Makeup">
+        <div class="product">
+          <img src="c:\Users\hp\Downloads\5e7fd741-a9b6-4fb0-9625-0ec56f002ff0.jpeg" alt="image">
+          <h3>Eyelash Curler ( Dior)</h3>
+          <span class="new-price">150 درهم</span><br>
+          <a href="#" class="shop-now-btn">Shop Now</a>
+        </div>  
+       </div> 
+      <div class="content hidden" id="Makeup">
+       <div class="product">
+         <img src="c:\Users\hp\Downloads\download (25).jpeg" width="400px" alt="image">
+         <h3>Mascara(Maybelline New York)</h3>
+         <span class="new-price">250 درهم</span><br>
+         <a href="#" class="shop-now-btn">Shop Now</a>
+       </div>  
+      </div> 
+      </section>
+      <section class="products">
+        <div class="content hidden" id="Makeup">
+         <div class="product">
+           <img src="c:\Users\hp\Downloads\download (26).jpeg" width="400px" alt="image">
+           <h3> Dior Addict lip glow oil</h3>
+           <span class="new-price">300 درهم</span><br>
+           <a href="#" class="shop-now-btn">Shop Now</a>
+         </div>  
+        </div> 
+        <div class="content hidden" id="Makeup">
+          <div class="product">
+            <img src="c:\Users\hp\Downloads\♡.jpeg" alt="image">
+            <h3> kiko Lip Glosses</h3>
+            <span class="new-price">150 درهم</span><br>
+            <a href="#" class="shop-now-btn">Shop Now</a>
+          </div>  
+         </div> 
+        <div class="content hidden" id="Makeup">
+         <div class="product">
+           <img src="c:\Users\hp\Downloads\The Christian Dior rosy blush _ shop now.jpeg" width="400px" alt="image">
+           <h3>the Christian Dior rosy blush</h3>
+           <span class="new-price">400 درهم</span><br>
+           <a href="#" class="shop-now-btn">Shop Now</a>
+         </div>  
+        </div> 
+        </section>
+        <section class="products">
+          <div class="content hidden" id="Makeup">
+           <div class="product">
+             <img src="c:\Users\hp\Downloads\11 Concealers You Can Wear Without Foundation.jpeg" width="400px" alt="image">
+             <h3> NYX Proffessional Makeup HD Studio Photogenic Concealer</h3>
+             <span class="new-price">80 درهم</span><br>
+             <a href="#" class="shop-now-btn">Shop Now</a>
+           </div>  
+          </div> 
+          <div class="content hidden" id="Makeup">
+            <div class="product">
+              <img src="c:\Users\hp\Downloads\Dior backstage glow face palette 💖.jpeg" alt="image">
+              <h3>Dior backstage glow face palette </h3>
+              <span class="new-price">600 درهم</span><br>
+              <a href="#" class="shop-now-btn">Shop Now</a>
+            </div>  
+           </div> 
+          <div class="content hidden" id="Makeup">
+           <div class="product">
+             <img src="c:\Users\hp\Downloads\The 5 Most-Pinned Eyeshadow Palettes of All Time.jpeg" width="400px" alt="image">
+             <h3> Urban Decay Naked Eyeshadow Palette</h3>
+             <span class="new-price">350 درهم</span><br>
+             <a href="#" class="shop-now-btn">Shop Now</a>
+           </div>  
+          </div> 
+          </section>
+          <section class="products">
+            <div class="content hidden" id="parfum">
+             <div class="product">
+               <img src="c:\Users\hp\Downloads\download (27).jpeg" width="400px" alt="image">
+               <h3> sence laverne</h3>
+               <span class="new-price">2090 درهم</span><br>
+               <a href="#" class="shop-now-btn">Shop Now</a>
+             </div>  
+            </div> 
+            <div class="content hidden" id="parfum">
+              <div class="product">
+                <img src="c:\Users\hp\Downloads\download (28).jpeg" alt="image">
+                <h3>miss dior</h3>
+                <span class="new-price">2700 درهم</span><br>
+                <a href="#" class="shop-now-btn">Shop Now</a>
+              </div>  
+             </div> 
+            <div class="content hidden" id="parfum">
+             <div class="product">
+               <img src="c:\Users\hp\Downloads\favorite parfumm.jpeg" width="400px" alt="image">
+               <h3>bureberry</h3>
+               <span class="new-price">3000 درهم</span><br>
+               <a href="#" class="shop-now-btn">Shop Now</a>
+             </div>  
+            </div> 
+            </section>      
+            <section class="products">
+              <div class="content hidden" id="parfum">
+               <div class="product">
+                 <img src="c:\Users\hp\Downloads\download (29).jpeg" width="400px" alt="image">
+                 <h3>KAY ALI</h3>
+                 <span class="new-price">2500 درهم</span><br>
+                 <a href="#" class="shop-now-btn">Shop Now</a>
+               </div>  
+              </div> 
+              <div class="content hidden" id="parfum">
+                <div class="product">
+                  <img src="c:\Users\hp\Downloads\Yara Lattafa Yara Perfume By Lattafa Perfume New Sealed Fragrance 100 ML 3_4OZ  _ eBay.jpg" alt="image">
+                  <h3>Yara</h3>
+                  <span class="new-price">3000 درهم</span><br>
+                  <a href="#" class="shop-now-btn">Shop Now</a>
+                </div>  
+               </div> 
+              <div class="content hidden" id="parfum">
+               <div class="product">
+                 <img src="c:\Users\hp\Downloads\khamrah by lattafa 🤎.jpg" width="400px" alt="image">
+                 <h3>khamra by lattafa</h3>
+                 <span class="new-price">3000 درهم</span><br>
+                 <a href="#" class="shop-now-btn">Shop Now</a>
+               </div>  
+              </div> 
+              </section>  
+              <section class="products">
+                <div class="content hidden" id="parfum">
+                 <div class="product">
+                   <img src="c:\Users\hp\Downloads\Discover Ganymede and Ganymede EXTRAIT by MARC-ANTOINE BARROIS.jpg" width="400px" alt="image">
+                   <h3>j'adore</h3>
+                   <span class="new-price">3000 درهم</span><br>
+                   <a href="#" class="shop-now-btn">Shop Now</a>
+                 </div>  
+                </div> 
+                <div class="content hidden" id="parfum">
+                  <div class="product">
+                    <img src="c:\Users\hp\Downloads\download (32).jpeg" alt="image">
+                    <h3>baccarat rouge 540</h3>
+                    <span class="new-price">3000 درهم</span><br>
+                    <a href="#" class="shop-now-btn">Shop Now</a>
+                  </div>  
+                 </div> 
+                <div class="content hidden" id="parfum">
+                 <div class="product">
+                   <img src="c:\Users\hp\Downloads\download (34).jpeg" width="400px" alt="image">
+                   <h3>libre</h3>
+                   <span class="new-price">4000 درهم</span><br>
+                   <a href="#" class="shop-now-btn">Shop Now</a>
+                 </div>  
+                </div> 
+                </section> 
+             <footer><!--pied de la page-->
+               <p>&copy; 2024 Elegant Boutique. All rights reserved. just for elegant womens.</p>
+               <p> By Doha Abdouni.</p>
+            </footer>    
+      </div>
+<!--pour chaque element dans header (hidden) --> 
+<script>
+                function showPage(pageId) {
+                    var pages = document.querySelectorAll('.content');
+                    pages.forEach(function(page) {
+                        if (page.id === pageId) {
+                            page.classList.remove('hidden');
+                        } else {
+                            page.classList.add('hidden');
+                        }
+                    });
+                }
+    </script> 
+ </div>
+</body>
+</html>
